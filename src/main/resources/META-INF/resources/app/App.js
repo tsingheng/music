@@ -16,7 +16,9 @@ Ext.define('Music.App', {
             items: [{
                 title: '网易云音乐',
                 layout: 'fit',
-                items: [Ext.create('Music.MusicGridPanel')]
+                items: [Ext.create('Music.MusicGridPanel', {
+                    source: '163'
+                })]
             }]
         });
         Ext.apply(this, {
@@ -41,8 +43,17 @@ Ext.define('Music.App', {
             }, me.mainTab, {
                 region: 'south',
                 height: 100,
-                style: 'border-top: 1px solid silver;'
-            }]
+                style: 'border-top: 1px solid silver;',
+                html: '<audio id="audio"></audio>'
+            }],
+            listeners: {
+                afterrender: function () {
+                    me.audio = document.getElementById('audio');
+                    me.audio.addEventListener('ended', function () {
+                        me.audio.play();
+                    }, false);
+                }
+            }
         });
         me.callParent(arguments);
     }
