@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.LinkedList;
@@ -61,18 +59,11 @@ public class NetEasyController {
 
 	@RequestMapping("/download")
 	public void download(Integer id, String name, HttpServletResponse response) throws Exception {
-//		response.setContentType("application/force-download");
+		response.setContentType("application/force-download");
 		response.addHeader("Content-Disposition", "attachment;fileName=" + new String(name.getBytes("utf-8"),"iso-8859-1"));
-		URL url = new URL("http://m10.music.126.net/20171109230226/8db0bd59489a489c139ae11b872fd287/ymusic/e8b0/4d43/9594/e02e7036c2d8c042aaee6e5dce5c1e7e.mp3");
+		URL url = new URL(String.format(MP3_URL_FORMAT, id));
 		URLConnection connection = url.openConnection();
 		IOUtils.copy(connection.getInputStream(), response.getOutputStream());
-	}
-
-	public static void main(String[] args) throws Exception {
-		URL url = new URL("http://m10.music.126.net/20171109230226/8db0bd59489a489c139ae11b872fd287/ymusic/e8b0/4d43/9594/e02e7036c2d8c042aaee6e5dce5c1e7e.mp3");
-		URLConnection connection = url.openConnection();
-		File file = new File("//Volumes/MacHD/test.mp3");
-		IOUtils.copy(connection.getInputStream(), new FileOutputStream(file));
 	}
 
 }
