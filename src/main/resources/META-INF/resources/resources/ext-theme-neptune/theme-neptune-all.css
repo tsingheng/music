@@ -1,0 +1,12 @@
+@import 'theme-neptune-all_1.css';
+@import 'theme-neptune-all_2.css';
+.x-tree-checkbox-indeterminate {
+    margin-right: 4px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-image: url(images/form/checkbox.png);
+}
+.x-tree-checkbox-indeterminate{
+    background-position: 0 -30px;
+}
