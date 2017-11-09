@@ -12,7 +12,6 @@ div.x-border-layout-ct{
     padding: 0px;
     margin: 5px;
     height: 50px;
-    background: url(images/logo.png) no-repeat;
     background-size:contain;
 }
 .app-header h1{
@@ -314,54 +313,4 @@ div.x-border-layout-ct{
 
 .x-grid-row-error{
     background: red;
-}
-
-
-/** image viewer */
-.iconcls-arrow_left { background-image:url(images/arrow_left.png); }
-.iconcls-arrow_right { background-image:url(images/arrow_right.png); }
-.iconcls-arrow_in { background-image:url(images/arrow_in.png); }
-.iconcls-arrow-left-right { background-image:url(images/arrow-left-right.png); }
-.iconcls-arrow_out { background-image:url(images/arrow_out.png); }
-.iconcls-arrow-up-down { background-image:url(images/arrow-up-down.png); }
-.iconcls-magifier_zoom_out { background-image:url(images/magifier_zoom_out.png); }
-.iconcls-magnifier_zoom_in { background-image:url(images/magnifier_zoom_in.png); }
-.iconcls-arrow-rotate-anticlockwise { background-image:url(images/arrow_rotate_anticlockwise.png); }
-.iconcls-arrow-rotate-clockwise { background-image:url(images/arrow_rotate_clockwise.png); }
-
-
-.x-form-multiselect-body .x-boundlist .x-mask {
-    /* Styles used by Ext.ux.form.ItemSelector */
-    background: none;
-}
-/* /Users/space/buildAgent/work/8cc7421dd8da164c/staging/packages/ux/classic/sass/src/form/ItemSelector.scss:7 */
-.x-form-itemselector-body .x-form-item {
-    margin: 0;
-}
-/* /Users/space/buildAgent/work/8cc7421dd8da164c/staging/packages/ux/classic/sass/src/form/ItemSelector.scss:11 */
-.x-form-itemselector-top {
-    background-image: url(images/top.gif);
-}
-/* /Users/space/buildAgent/work/8cc7421dd8da164c/staging/packages/ux/classic/sass/src/form/ItemSelector.scss:14 */
-.x-form-itemselector-up {
-    background-image: url(images/up.gif);
-}
-/* /Users/space/buildAgent/work/8cc7421dd8da164c/staging/packages/ux/classic/sass/src/form/ItemSelector.scss:17 */
-.x-form-itemselector-add {
-    background-image: url(images/right.gif);
-}
-/* /Users/space/buildAgent/work/8cc7421dd8da164c/staging/packages/ux/classic/sass/src/form/ItemSelector.scss:20 */
-.x-form-itemselector-remove {
-    background-image: url(images/left.gif);
-}
-/* /Users/space/buildAgent/work/8cc7421dd8da164c/staging/packages/ux/classic/sass/src/form/ItemSelector.scss:23 */
-.x-form-itemselector-down {
-    background-image: url(images/down.gif);
-}
-/* /Users/space/buildAgent/work/8cc7421dd8da164c/staging/packages/ux/classic/sass/src/form/ItemSelector.scss:26 */
-.x-form-itemselector-bottom {
-    background-image: url(images/bottom.gif);
-}
-.x-boundlist-item{
-    line-height: 34px;
 }
