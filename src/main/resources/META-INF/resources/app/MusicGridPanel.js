@@ -31,7 +31,7 @@ Ext.define('Music.MusicGridPanel', {
                 text: '下载',
                 handler: function () {
                     var song = me.getSelection()[0];
-                    window.location.href = '/' + me.source + '/download?id=' + song.get('id') + '&name=' + song.get('name') + ".mp3";
+                    window.location.href = '/' + me.source + '/download?id=' + song.get('id') + '&name=' + song.get('name') + "-" + song.get('author');
                 }
             }]
         });
@@ -78,7 +78,7 @@ Ext.define('Music.MusicGridPanel', {
     search: function () {
         var me = this;
         var keywords = me.input.getValue();
-        me.getStore().getProxy().setExtraParam('keywords', encodeURIComponent(keywords));
+        me.getStore().getProxy().setExtraParam('keywords', keywords);
         me.getStore().reload();
     }
 });

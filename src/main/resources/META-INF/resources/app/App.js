@@ -19,6 +19,12 @@ Ext.define('Music.App', {
                 items: [Ext.create('Music.MusicGridPanel', {
                     source: '163'
                 })]
+            }, {
+                title: '酷我音乐',
+                layout: 'fit',
+                items: [Ext.create('Music.MusicGridPanel', {
+                    source: 'kuwo'
+                })]
             }]
         });
         Ext.apply(this, {
