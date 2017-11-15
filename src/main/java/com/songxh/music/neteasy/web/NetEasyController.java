@@ -27,7 +27,7 @@ public class NetEasyController extends AbstractMusicController {
 
 	private static final String SEARCH_URL = "http://music.163.com/api/search/get/";
 	private static final String SEARCH_REQUEST_FORMAT = "s=%s&limit=20&type=1&offset=%d";
-	private static final String MP3_URL_FORMAT = "http://music.163.com/song/media/outer/url?id=%d.mp3";
+	private static final String MP3_URL_FORMAT = "http://music.163.com/song/media/outer/url?id=%s.mp3";
 
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public Page search(String keywords, Integer start) throws UnsupportedEncodingException {

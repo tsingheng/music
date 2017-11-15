@@ -27,6 +27,13 @@ Ext.define('Music.App', {
                 })]
             }]
         });
+        var player = Ext.create('Ext.slider.Single', {
+            width: '100%',
+            value: 0,
+            increment: 1,
+            minValue: 0,
+            maxValue: 1000
+        });
         Ext.apply(this, {
             items: [{
                 region: 'north',
@@ -37,7 +44,7 @@ Ext.define('Music.App', {
                     region: 'west',
                     layout: 'fit',
                     width: me.menuWidth + 1,
-                    html: '<div class="logo"><h1></h1></div>'
+                    html: '<audio id="audio"></audio>'
                 }, {
                     region: 'center'
                 }]
@@ -48,9 +55,8 @@ Ext.define('Music.App', {
                 style: 'border-right: 1px solid silver;'
             }, me.mainTab, {
                 region: 'south',
-                height: 100,
                 style: 'border-top: 1px solid silver;',
-                html: '<audio id="audio"></audio>'
+                items: [player]
             }],
             listeners: {
                 afterrender: function () {
@@ -58,6 +64,13 @@ Ext.define('Music.App', {
                     me.audio.addEventListener('ended', function () {
                         me.audio.play();
                     }, false);
+                    me.audio.addEventListener('timeupdate', function () {
+                        var progress = me.audio.currentTime/me.audio.duration;
+                        player.setValue(progress * 1000);
+                    });
+                    player.on('changecomplete', function (slider, value) {
+                        me.audio.currentTime = value/1000 * me.audio.duration;
+                    });
                 }
             }
         });

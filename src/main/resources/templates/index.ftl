@@ -14,10 +14,6 @@
     <title>音乐下载助手</title>
 </head>
 <body>
-    <div class="nav"></div>
-    <div class="container" id="container">
-
-    </div>
     <script type="text/javascript">
         Ext.Loader.setConfig({
             enabled: true
