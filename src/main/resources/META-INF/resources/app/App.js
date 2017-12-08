@@ -25,6 +25,12 @@ Ext.define('Music.App', {
                 items: [Ext.create('Music.MusicGridPanel', {
                     source: 'kuwo'
                 })]
+            }, {
+                title: '百度音乐',
+                layout: 'fit',
+                items: [Ext.create('Music.MusicGridPanel', {
+                    source: 'baidu'
+                })]
             }]
         });
         var player = Ext.create('Ext.slider.Single', {

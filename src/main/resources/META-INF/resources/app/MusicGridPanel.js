@@ -79,6 +79,6 @@ Ext.define('Music.MusicGridPanel', {
         var me = this;
         var keywords = me.input.getValue();
         me.getStore().getProxy().setExtraParam('keywords', keywords);
-        me.getStore().reload();
+        me.getStore().loadPage(1);
     }
 });
